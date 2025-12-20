@@ -1,25 +1,31 @@
 package com.revature.library.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 /**
  * Book Entity - TODO: Complete the annotations
  */
-// TODO: Add @Entity annotation
-// TODO: Add @Table(name = "books") annotation
+@Entity
+@Table(name = "books")
+@Getter
+@Setter
 public class Book {
 
-    // TODO: Add @Id and @GeneratedValue annotations
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // TODO: Add @Column(nullable = false) annotation
+    @Column(nullable = false)
     private String title;
 
-    // TODO: Add @Column(nullable = false) annotation
+    @Column(nullable = false)
     private String author;
 
-    // TODO: Add @Column(unique = true) annotation
+    @Column(unique = true)
     private String isbn;
 
     private boolean available = true;
